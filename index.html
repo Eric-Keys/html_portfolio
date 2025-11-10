@@ -7,8 +7,21 @@
 </head>
 <body>
     <p>
-        hello
+        sudo apt update && sudo apt upgrade -y
+
+wget -O splunk-latest.deb 'https://download.splunk.com/products/splunk/releases/latest/linux/splunk-latest-linux-amd64.deb'
+
+sudo dpkg -i splunk-latest.deb
+
+IF DEPENDING PROBLEM DO:sudo apt --fix-broken install -y
+
+cd /opt/splunk/bin
+
+sudo ./splunk start --accept-license
+
+Then:http://<Ubuntu_server_IP>:8000
     </p>
 </body>
 
 </html>
+
