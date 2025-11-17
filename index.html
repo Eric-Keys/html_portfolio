@@ -21,6 +21,26 @@ sudo ./splunk start --accept-license
 
 Then:http://<Ubuntu_server_IP>:8000
     </p>
+    
+    
+    
+    
+    
+    <p>sudo dpkg -i splunkforwarder.deb </br>
+        sudo /opt/splunkforwarder/bin/splunk start --accept-license </br>
+        sudo /opt/splunkforwarder/bin/splunk add forward-server <YOUR-SPLUNK-IP>:9997 </br>
+            sudo nano /opt/splunkforwarder/etc/system/local/inputs.conf </br>
+            INSIDE OF CONFIG FILE: [monitor:///home/cowrie/cowrie/var/log/cowrie/cowrie.log]
+index = honeypot
+sourcetype = cowrie
+
+[monitor:///home/cowrie/cowrie/var/log/cowrie/json.log]
+index = honeypot
+sourcetype = cowrie_json </br>
+RESTART: sudo /opt/splunkforwarder/bin/splunk restart
+        
+        
+        </p>
 </body>
 
 </html>
